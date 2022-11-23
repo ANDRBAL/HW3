@@ -6,14 +6,13 @@ Console.WriteLine("Введите число с: ");
 int c = Convert.ToInt32(Console.ReadLine());
 if (a > b && a > c)
 {
-Console.WriteLine("max = a");
+Console.WriteLine(a);
 }
 else if (b > a && b > c)
 {
-Console.WriteLine("max = b");
+Console.WriteLine(b);
 }
 else
 {
-Console.WriteLine("max = с");
-
+Console.WriteLine(c);
 }

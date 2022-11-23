@@ -1,7 +1,12 @@
-﻿ Console.WriteLine("Введите число: ");
- int num1 = Convert.ToInt32(Console.ReadLine());
- int num2 = 2
- if(num1 % num2)
-Console.WriteLine("число четное");
-else
-Console.WriteLine("число нечетное");
+﻿int a;
+Console.Write("Введите число ");
+a = Convert.ToInt32(Console.ReadLine());
+ if (a % 2 == 0)
+
+ {
+Console.WriteLine("четное");
+ }
+
+ else
+
+Console.WriteLine("нечетное");
