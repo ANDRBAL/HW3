@@ -1,18 +1,12 @@
-﻿Console.WriteLine("Введите число a: ");
+﻿Console.Write("Введи число: ");
+
 int a = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите число b: ");
-int b = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите число с: ");
-int c = Convert.ToInt32(Console.ReadLine());
-if (a > b && a > c)
-{
-Console.WriteLine(a);
+string b = Convert.ToString(a);
+
+if (b.Length > 2){
+  Console.WriteLine("3я цифра -> " + b[2]);
 }
-else if (b > a && b > c)
-{
-Console.WriteLine(b);
-}
-else
-{
-Console.WriteLine(c);
+
+else {
+  Console.WriteLine("-> 3я цифра отсутсвует");
 }
