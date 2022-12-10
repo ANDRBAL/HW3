@@ -7,20 +7,20 @@ PrintArray(numbers);
 double min = Int32.MaxValue;
 double max = Int32.MinValue;
 
-for (int z = 0; z < numbers.Length; z++)
+for (int a = 0; a < numbers.Length; a++)
 {
-if (numbers[z] > max)
+if (numbers[a] > max)
 {
-            max = numbers[z];
+            max = numbers[a];
  }
-if (numbers[z] < min)
+if (numbers[a] < min)
 {
-            min = numbers[z];
+            min = numbers[a];
  }
 }
 
-Console.WriteLine($"всего {numbers.Length} чисел. Максимальное значение = {max}, минимальное значение = {min}");
-Console.WriteLine($"Разница между максимальным и минимальным значением = {max - min}");
+Console.WriteLine($"всего {numbers.Length} чисел. Макс= {max}, мин значение = {min}");
+Console.WriteLine($"Разница между макс и мин = {max - min}");
 
 void FillArrayRandomNumbers(double[] numbers)
 {
@@ -113,22 +113,22 @@ for(int i = 0; i < numbers.Length; i++)
 //void Cube(int[] cube){
 //int counter = 0;
 //int length = cube.Length;
-while (counter <  length){
-cube[counter] = Convert.ToInt32(Math.Pow(counter, 3));
-counter++;
-}
-}
-void PrintArry(int[] coll){
-int count = coll.Length;
-int index = 0;
-while(index < count){
-Console.Write(coll[index]+ " ");
-index++;
-}
-} 
-int[] arry = new int[cube+1];
-Cube(arry);
-PrintArry(arry);
+//while (counter <  length){
+//cube[counter] = Convert.ToInt32(Math.Pow(counter, 3));
+//counter++;
+//}
+//}
+//void PrintArry(int[] coll){
+//int count = coll.Length;
+//int index = 0;
+//while(index < count){
+//Console.Write(coll[index]+ " ");
+//index++;
+//}
+//} 
+//int[] arry = new int[cube+1];
+//Cube(arry);
+//PrintArry(arry);
 
 
 
