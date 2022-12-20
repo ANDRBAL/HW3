@@ -1,16 +1,89 @@
-﻿Console.WriteLine("введите значение b1");
-double b1 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("введите число k1");
-double k1 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("введите значение b2");
-double b2 = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("введите число k2");
-double k2 = Convert.ToInt32(Console.ReadLine());
+﻿Console.WriteLine("введите номер строки");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("введите номер столбца");
+int m = Convert.ToInt32(Console.ReadLine());
+int [,] numbers = new int [10,10];
+FillArrayRandomNumbers(numbers);
 
-double x = (-b2 + b1)/(-k1 + k2);
-double y = k2 * x + b2;
+if (n > numbers.GetLength(0) || m > numbers.GetLength(1))
+{
+    Console.WriteLine("такого элемента нет");
+}
+else
+{
+    Console.WriteLine($"значение элемента {n} строки и {m} столбца равно {numbers[n-1,m-1]}");
+}
 
-Console.WriteLine($"две прямые пересекутся в точке с координатами X: {x}, Y: {y}");
+PrintArray(numbers);
+
+void FillArrayRandomNumbers(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+        {        
+            for (int j = 0; j < array.GetLength(1); j++)
+            {
+                array [i,j] = new Random().Next(-100, 100)/10;
+            }   
+        }
+}
+
+void PrintArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        Console.Write("[ ");
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i,j] + " ");
+        }   
+        Console.Write("]");
+        Console.WriteLine(""); 
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Console.WriteLine("введите значение b1");
+//double b1 = Convert.ToInt32(Console.ReadLine());
+//Console.WriteLine("введите число k1");
+//double k1 = Convert.ToInt32(Console.ReadLine());
+//Console.WriteLine("введите значение b2");
+//double b2 = Convert.ToInt32(Console.ReadLine());
+//Console.WriteLine("введите число k2");
+//double k2 = Convert.ToInt32(Console.ReadLine());
+//
+//double x = (-b2 + b1)/(-k1 + k2);
+//double y = k2 * x + b2;
+//
+//Console.WriteLine($"две прямые пересекутся в точке с координатами X: {x}, Y: {y}");
 
 
 
