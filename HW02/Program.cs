@@ -1,70 +1,124 @@
-﻿// Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
+﻿int m = InputInt("Введите M:");
+int n = InputInt("Введите N:");
+Console.WriteLine($"Сумма элементов от {m} до {n} = {CountNaturalSum(m, n)}");
 
-Console.Clear();
-Console.WriteLine($"Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.");
-Console.WriteLine($"\nВведите размер массива m x n и диапазон случайных значений:");
-int m = InputNumbers("Введите m: ");
-int n = InputNumbers("Введите n: ");
-int range = InputNumbers("Введите диапазон: от 1 до ");
-
-int[,] array = new int[m, n];
-CreateArray(array);
-WriteArray(array);
-
-int minSumLine = 0;
-int sumLine = SumLineElements(array, 0);
-for (int i = 1; i < array.GetLength(0); i++)
+int InputInt(string output)
 {
-  int tempSumLine = SumLineElements(array, i);
-  if (sumLine > tempSumLine)
-  {
-    sumLine = tempSumLine;
-    minSumLine = i;
-  }
+    Console.Write(output);
+    return int.Parse(Console.ReadLine());
 }
 
-Console.WriteLine($"\n{minSumLine+1} - строкa с наименьшей суммой ({sumLine}) элементов ");
-
-
-int SumLineElements(int[,] array, int i)
+int CountNaturalSum(int m, int n)
 {
-  int sumLine = array[i,0];
-  for (int j = 1; j < array.GetLength(1); j++)
-  {
-    sumLine += array[i,j];
-  }
-  return sumLine;
+    if (m == n)
+        return n;
+    return n + CountNaturalSum(m, n - 1);
 }
 
-int InputNumbers(string input)
-{
-  Console.Write(input);
-  int output = Convert.ToInt32(Console.ReadLine());
-  return output;
-}
 
-void CreateArray(int[,] array)
-{
-  for (int i = 0; i < array.GetLength(0); i++)
-  {
-    for (int j = 0; j < array.GetLength(1); j++)
-    {
-      array[i, j] = new Random().Next(range);
-    }
-  }
-}
 
-void WriteArray (int[,] array)
-{
-  for (int i = 0; i < array.GetLength(0); i++)
-  {
-    for (int j = 0; j < array.GetLength(1); j++)
-    {
-      Console.Write(array[i,j] + " ");
-    }
-    Console.WriteLine();
-  }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
+
+//Console.Clear();
+//Console.WriteLine($"Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.");
+//Console.WriteLine($"\nВведите размер массива m x n и диапазон случайных значений:");
+//int m = InputNumbers("Введите m: ");
+//int n = InputNumbers("Введите n: ");
+//int range = InputNumbers("Введите диапазон: от 1 до ");
+//
+//int[,] array = new int[m, n];
+//CreateArray(array);
+//WriteArray(array);
+//
+//int minSumLine = 0;
+//int sumLine = SumLineElements(array, 0);
+//for (int i = 1; i < array.GetLength(0); i++)
+//{
+//  int tempSumLine = SumLineElements(array, i);
+//  if (sumLine > tempSumLine)
+ // {
+//    sumLine = tempSumLine;
+//    minSumLine = i;
+//  }
+//}
+//
+//Console.WriteLine($"\n{minSumLine+1} - строкa с наименьшей суммой ({sumLine}) элементов ");
+//
+//
+//int SumLineElements(int[,] array, int i)
+//{
+//  int sumLine = array[i,0];
+ // for (int j = 1; j < array.GetLength(1); j++)
+ // {
+ //   sumLine += array[i,j];
+ // }
+ // return sumLine;
+//}
+
+//int InputNumbers(string input)
+//{
+//  Console.Write(input);
+ // int output = Convert.ToInt32(Console.ReadLine());
+//  return output;
+//}
+//
+//void CreateArray(int[,] array)
+//{
+ // for (int i = 0; i < array.GetLength(0); i++)
+ // {
+ //   for (int j = 0; j < array.GetLength(1); j++)
+  //  {
+ //     array[i, j] = new Random().Next(range);
+  //  }
+  //}
+//}
+
+//void WriteArray (int[,] array)
+//{
+//  for (int i = 0; i < array.GetLength(0); i++)
+//  {
+//    for (int j = 0; j < array.GetLength(1); j++)
+ //   {
+  //    Console.Write(array[i,j] + " ");
+   // }
+  //  Console.WriteLine();
+  //}
+//}
 
 
 
